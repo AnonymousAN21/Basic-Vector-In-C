@@ -1,4 +1,3 @@
-Berikut versi README yang sudah ditambahkan bagian kredit secara formal dan profesional.
 
 ---
 
