@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 void vector_push_back(vector* v, void* value);
+void vector_insert(vector* v, void* value, int index);
 void* vector_pop(vector* v, int index);
 bool vector_isEmpty(vector* v);
 bool vector_isSort(vector* v, int (*compare)(const void*, const void*));
@@ -71,6 +71,32 @@ void vector_push_back(vector* v, void* value){
 
     char* dest = (char*)v->data + (v->size * v->elem_size);
     memcpy(dest, value, v->elem_size);
+
+    v->size++;
+}
+
+void vector_insert(vector* v, void* value, int index){
+    if(index < 0 || index > v->size){
+        printf("Invalid index\n");
+        return;
+    }
+
+    if (v->size == v->capacity) {
+        if (resize(v) == -1) {
+            printf("Failed to allocate memory\n");
+            return;
+        }
+    }
+
+    char* base = (char*)v->data;
+
+    memmove(
+        base + ((index + 1) * v->elem_size),
+        base + (index * v->elem_size),
+        (v->size - index) * v->elem_size
+    );
+
+    memcpy(base + (index * v->elem_size), value, v->elem_size);
 
     v->size++;
 }
