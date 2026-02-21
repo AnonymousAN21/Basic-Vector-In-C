@@ -3,12 +3,18 @@
 
 # Basic C STL(Standard Library)
 
-Library queue generik berbasis OOP-style di bahasa C menggunakan `void*` dan function pointer untuk mendukung berbagai tipe data.
-
-Queue ini menggunakan konsep **FIFO (First In First Out)**.
+STL generik berbasis OOP-style di bahasa C menggunakan `void*` dan function pointer untuk mendukung berbagai tipe data. library ini saya buat untuk latihan saya dalam menggunakan C.
 
 Library ini mendukung:
 
+* Dynamic resizing (auto grow)
+* push_back
+* pop dengan output parameter
+* get by index
+* length
+* isEmpty
+* clear
+* destroy
 * enqueue
 * dequeue
 * isEmpty
