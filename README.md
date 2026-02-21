@@ -1,7 +1,7 @@
 
 ---
 
-# Basic C Generic Queue Library
+# Basic C STL(Standard Library)
 
 Library queue generik berbasis OOP-style di bahasa C menggunakan `void*` dan function pointer untuk mendukung berbagai tipe data.
 
